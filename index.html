@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> Анкета </title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="js/tmpl.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	<script type="text/html" id="page">
+		<div class="page">
+			<% for (var i = 0; i < data.length; i++) { %>
+				<div>
+					<h1><%= data[i].fio %></h1></div>
+				<div class="imgcenter"> <img src="<%= data[i].img %>" alt="Переяславская Светлана" height="200">
+					<p>
+						<%= data[i].work %>
+					</p>
+				</div>
+				<div class="line">&nbsp;</div>
+				<div class="indent">
+					<p>Хочу учить frontend, потому что:</p>
+					<ul>
+						<% for (var j = 0; j < (data[i].wish.length); j++) { %>
+							<li>
+								<%= data[i].wish[j] %>
+							</li>
+							<% }; %>
+					</ul>
+				</div>
+				<div class="line">&nbsp;</div>
+				<div>
+					<h3> Мои контакты </h3> </div>
+				<div class="indent">
+					<p>Мой телефон: <span class="contact"><%= data[i].tel %></span></p>
+					<p>e-mail: <span class="contact"><%= data[i].email %></span></p>
+					<p>Skype: <span class="contact"><%= data[i].skype %></span></p>
+					<p class="social">Социальные сети:</p>
+					<!--	<a href="<%= data[i].vk %>"> vk.com </a> </p>--><a href="<%= data[i].vk %>">vk.com</a> <a class="indent1" href="<%= data[i].fb %>">facebook.com</a> </div>
+				<div class="line">&nbsp;</div>
+				<div class="indent">
+					<P>Здесь будет мой фидбек!</P>
+				</div>
+				<% } %>
+		</div>
+	</script>
+</body>
+
+</html>
